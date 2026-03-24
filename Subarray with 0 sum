@@ -15,3 +15,20 @@ public:
     }
 };
 //optimized code
+#include <unordered_set>
+#include <vector>
+class Solution {
+public:
+    bool subArrayExists(std::vector<int>& arr) {
+        std::unordered_set<int> s;
+        int c=0;
+        for (int x:arr) {
+            c+=x;
+            if (c==0||s.find(c)!=s.end()) {
+                return true;
+            }
+s.insert(c);
+        }
+        return false;
+    }
+};
