@@ -1,0 +1,22 @@
+class Solution {
+  public:
+    void rearrange(vector<int>& arr) {
+        int n = arr.size();
+        if (n <= 1) return; 
+        sort(arr.begin(), arr.end());
+        vector<int> p;
+        int left = 0;
+        int right = n - 1;
+        while (left <= right) {
+            if (left == right) {
+                p.push_back(arr[left]);
+            } else {
+                p.push_back(arr[right]);
+                p.push_back(arr[left]);
+            }
+            right--;
+            left++;
+        }
+        arr = p;
+    }
+};
