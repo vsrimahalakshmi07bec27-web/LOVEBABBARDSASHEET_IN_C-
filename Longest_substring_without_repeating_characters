@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+      vector<int> count(128,0);
+      int l=0,r=0,maxl=0;
+      while(r<s.length()){
+char lu=s[r];
+count[lu]++;
+while(count[lu]>1){
+    char ru=s[l];
+    count[ru]--;
+l++;}
+maxl=max(maxl,r-l+1);
+r++;
+      }
+      return maxl;
+    }
+};
