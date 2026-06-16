@@ -1,0 +1,7 @@
+def count_heads(r, n):
+    if r==0 or r>n :
+      return 0.0000
+    else :
+      combinations=math.comb(n,r)
+      t=combintions*(0.5)**n
+      return t
