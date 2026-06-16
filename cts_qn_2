@@ -1,0 +1,4 @@
+for i in range(1,5):
+     Print(“*”  *i)
+For j in range(3,0,-1):
+  Print(“*” * j)
