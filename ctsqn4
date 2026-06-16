@@ -1,0 +1,42 @@
+) #include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int prd = 1;
+    int s = 0;
+    int n;
+    
+    cout << "enter the size of the array: ";
+    cin >> n;
+
+    // Declare vectors after 'n' has a valid value
+    vector<int> arr(n);
+    vector<int> arr1(n);
+
+    cout << "enter the elements for the first array: ";
+    for (int j = 0; j < n; j++) {
+        cin >> arr[j];
+    }
+
+    cout << "enter the elements for the second array: ";
+    for (int k = 0; k < n; k++) {
+        cin >> arr1[k];
+    }
+
+    // Sort both arrays in ascending order
+    sort(arr.begin(), arr.end());
+    sort(arr1.begin(), arr1.end());
+
+    // Calculate maximum sum of products
+    for (int i = 0; i < n; i++) {
+        prd = arr[i] * arr1[i];
+        s = s + prd;
+    }
+
+    cout << "Result: " << s << endl;
+    
+    return 0;
+}
