@@ -1,0 +1,28 @@
+#include <iostream>
+int main()
+{int row,col;
+int cnt=0;
+int arr[10][10];
+int s=0;
+    std::cout<<"enter the size of the row";
+    std::cin>>row;
+    std::cout<<"enter the size of the column";
+    std::cin>>col;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            std::cin>>arr[i][j];
+        }
+    }
+    
+ for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if((arr[i][j]%2)!=0)
+              s=s+arr[i][j];
+        }
+        if((s%2)==0)
+         cnt++;
+    }
+    
+    std::cout<<cnt;
+return 0;
+}
