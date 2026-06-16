@@ -1,0 +1,22 @@
+) #include<iostream>
+using namespace std;
+int main(){
+    int arr[100][100];
+    int s=0;
+    cout<<"enter the elements of 100*100 array";
+    for(int i=0;i<100;i++){
+        for(int j=0;j<100;j++){
+            cin>>arr[i][j];
+        }
+    }
+    for(int i=0;i<100;i++){
+        for(int j=0;j<100;j++){
+            if(i==j){
+             s=s+arr[i][j];   
+            }
+        }
+    }
+    cout<<"the sum of the diagonal elements in 100*100 matrix is"<<s;
+    
+}
+    
