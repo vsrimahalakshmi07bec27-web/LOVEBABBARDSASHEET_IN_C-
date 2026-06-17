@@ -1,0 +1,14 @@
+class Solution {
+  public:
+    bool isSubset(vector<int> &a, vector<int> &b) {
+      unordered_map <int,int> tuk;
+      for(int i:a){
+      tuk[i]++;
+      }
+    for(int j:b){
+        if(tuk[j]<=0)
+        return false;
+        tuk[j]--;}
+        return true;
+    }
+};
