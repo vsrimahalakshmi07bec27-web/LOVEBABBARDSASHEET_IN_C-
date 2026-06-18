@@ -1,0 +1,25 @@
+/*A department maintains long codes consisting of repeated consecutive characters. To reduce storage space, the code must be compressed.
+
+Replace each group of consecutive identical characters with the character followed by the number of times it appears consecutively.
+
+If a character appears only once consecutively, include 1 after the character.
+
+Given a string S, generate its compressed form*/
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{ int cnt=0;
+vector<string> tu;
+string str;
+cin>>str;
+int n=str.length();
+for(int i=0;i<n;i++){
+cnt = count(str.begin(),str.end(),str[i]);
+tu.push_back(string(1, str[i]));
+tu.push_back(to_string(cnt));
+}
+return 0;
+}
