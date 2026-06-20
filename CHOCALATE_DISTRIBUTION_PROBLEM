@@ -1,0 +1,22 @@
+class Solution {
+  public:
+    int findMinDiff(vector<int>& a, int m) {
+       int f,b;
+       int min_diff=INT_MAX;
+       int n=a.size();
+       vector<int> arr1;
+f=0;
+b=m-1;
+sort(a.begin(),a.end());
+ while(b < n) {
+          int mini = a[b] - a[f];
+          if(mini < min_diff) {
+              min_diff = mini;
+          }
+          f++;
+          b++;
+       }
+        
+return min_diff;
+    }
+};
