@@ -1,0 +1,48 @@
+class Solution {
+    private:
+      vector<vector<int>> visited;
+      
+  public:
+    vector<int> spirallyTraverse(vector<vector<int>> &mat) {
+    int colbegin=0;
+    vector<int> ans;
+    int colend=mat[0].size()-1;
+        int rowbegin=0;
+        int rowend= mat.size()-1;
+
+        while(rowbegin<=rowend && colbegin<=colend)
+{
+    
+    
+    //Traversing right
+    for(int i=colbegin;i<=colend;i++){
+        
+        ans.push_back(mat[rowbegin][i]);
+        
+    }
+    rowbegin++;
+    //Traversing down
+    for(int j=rowbegin;j<=rowend;j++){
+        
+    ans.push_back(mat[j][colend]); 
+        
+    }
+    colend--;
+    if(rowbegin<=rowend){
+    //traversing left
+    for(int k=colend;k>=colbegin;k--){
+        ans.push_back(mat[rowend][k]);
+    }
+    rowend--;}
+    //traversin up
+if(colbegin<=colend){
+    for(int l=rowend;l>=rowbegin;l--){
+        ans.push_back(mat[l][colbegin]);
+        
+    }
+    colbegin++;}
+    
+} return ans;       
+    }
+    
+};
