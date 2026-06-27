@@ -1,0 +1,30 @@
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class Solution {
+  public:
+    int median(vector<vector<int>> &mat) {
+
+        vector<int> flat;
+        for(const auto& row : mat){
+            // FIX: Changed mat to row to insert individual elements
+            flat.insert(flat.end(), row.begin(), row.end()); 
+        }
+        
+        sort(flat.begin(), flat.end());
+        int n = flat.size();
+        
+        if(n % 2 == 0) {
+            int k1 = n / 2;
+            int k2 = (n / 2) - 1;
+            return (flat[k1] + flat[k2]) / 2; // FIX: Added missing semicolon
+        } 
+        else {
+            int k = n / 2; // FIX: Added missing semicolon
+            return flat[k];
+        }
+    }
+};
+//OPTIMIZED SOLUTION
